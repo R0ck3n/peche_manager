@@ -1,0 +1,61 @@
+:root {
+  //colors:
+
+  //White link:
+  //active
+  --a-active: #ffffff;
+  //no-active
+  --a-noactive: #a5a7aa;
+  // hover links
+  --a-hover: #e3e6ea;
+
+  //Blue link:
+  //active
+  --blue-noactive: #5252ff;
+  // hover links
+  --blue-hover: #4141a2;
+
+
+  //Social Media links
+  //initial
+  --social: #ffffff;
+  // hover links
+  --social-hover: #52ffe5;
+
+  // h1
+  --title: #ffffff;
+
+//Button background color
+  //Box shadow forms
+  //Box shadow map
+  //Box shadow weather
+  --btn-bgc:#4848e7;
+
+  //Delete bgc
+  --btn-delete: #842029;
+
+  //errors forms
+  // background-color:
+  --error-bgc:#f8d7da;
+  //text:
+  --error-text:#842029;
+
+//BurgerMenu
+  //Click zone
+  --burger-border:#ced4da;
+
+  //burger inside style
+  --burger-cross:#ffffff;
+
+//textarea Border
+  --textAreaBorder:#a5a7aa;
+
+//table
+
+  //table line odd
+  --TableLineOdd: #dfefff;
+  //table line even
+  --TableLineEven: #dfffe1;
+
+
+}
