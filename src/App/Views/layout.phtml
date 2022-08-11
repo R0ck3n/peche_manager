@@ -15,59 +15,64 @@
 </head>
 <body>
 <header>
-    <a href="<?= url('/') ?>">
-        <h1>PECHE MANAGER</h1>
-    </a>
-    <div class="header-link-container ">
-        <div>
-            <div class="burger" id="burger"></div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="<?= url('/') ?>"
-                           class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/' || $_SERVER['REQUEST_URI'] === '/') : ?>active<?php endif ?>">
-                            Accueil
-                        </a>
-                    </li>
-                    <?php if (isset($_SESSION['user_id'])): ?>
+    <section>
+        <a href="<?= url('/') ?>">
+            <h1>PECHE MANAGER</h1>
+        </a>
+        <div class="header-link-container ">
+            <div>
+                <div class="burger" id="burger"></div>
+                <nav>
+                    <ul>
                         <li>
-                            <a href="<?= url('/memberSpace') ?>"
-                               class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/memberSpace') : ?>active<?php endif ?>">Mon
-                                Espace</a>
+                            <a href="<?= url('/') ?>"
+                               class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/' || $_SERVER['REQUEST_URI'] === '/') : ?>active<?php endif ?>">
+                                Accueil
+                            </a>
                         </li>
-                    <?php endif; ?>
-                    <?php if (isset($_SESSION['user_id']) && $_SESSION['user_role']==='admin'): ?>
-                    <li>
-                        <a href="<?= url('/admin') ?>"
-                           class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/admin') : ?>active<?php endif ?>">Page admin</a>
-                    </li>
-                    <?php endif; ?>
-                </ul>
-            </nav>
-            <div class="flex-gap">
-                <?php if (isset($_SESSION['user_id']) && $_SESSION['user_role']==='member'): ?>
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                            <li>
+                                <a href="<?= url('/memberSpace') ?>"
+                                   class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/memberSpace') : ?>active<?php endif ?>">Mon
+                                    Espace</a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if (isset($_SESSION['user_id']) && $_SESSION['user_role'] === 'admin'): ?>
+                            <li>
+                                <a href="<?= url('/admin') ?>"
+                                   class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/admin') : ?>active<?php endif ?>">Page
+                                    admin</a>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </nav>
+                <div class="flex-gap">
+                    <?php if (isset($_SESSION['user_id']) && $_SESSION['user_role'] === 'member'): ?>
                         <a href="<?= url('/update') ?>?id=<?= htmlentities($_SESSION['user_id']) ?>"
-                           class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/update') : ?>active<?php endif ?>">Modifier mon Profil</a>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <a href="<?= url('/logout') ?>">Se déconnecter</a>
-                <?php else: ?>
-                    <a href="<?= url('/login') ?>"
-                       class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/login') : ?>active<?php endif ?>">Se
-                        connecter / S'inscrire</a>
-                <?php endif; ?>
+                           class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/update') : ?>active<?php endif ?>">Modifier
+                            mon Profil</a>
+                    <?php endif; ?>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <a href="<?= url('/logout') ?>">Se déconnecter</a>
+                    <?php else: ?>
+                        <a href="<?= url('/login') ?>"
+                           class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/login') : ?>active<?php endif ?>">Se
+                            connecter / S'inscrire</a>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="logo">
-        <img src="../../../public/img/Logo.webp" alt="Logo">
-    </div>
-    <div class="custom-shape-divider-bottom-1655304999">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                  class="shape-fill"></path>
-        </svg>
-    </div>
+        <div class="logo">
+            <img src="../../../public/img/Logo.webp" alt="Logo">
+        </div>
+        <div class="custom-shape-divider-bottom-1655304999">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                 preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                      class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
 </header>
 
 <!--le corp de la page sera injecté en fonction de la page observée-->
@@ -75,19 +80,20 @@
     <?php require $template . '.phtml' ?>
 </main>
 
-
 <footer>
-
-    <svg fill="#ffffff" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-         preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-    </svg>
-    <div>
-        <p>Lien vers les réseaux :</p>
-        <a href="https://twitter.com/r0kk3nn" target="_blank">
-            <svg class="cls-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Capa_1"
-                 x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"
-                 height="25px">
+    <section>
+        <svg fill="#ffffff" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+             preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+        <div>
+            <p>Lien vers les réseaux :</p>
+            <a href="https://twitter.com/r0kk3nn" target="_blank">
+                <svg class="cls-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     id="Capa_1"
+                     x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                     xml:space="preserve"
+                     height="25px">
                     <g>
                         <g>
                             <g>
@@ -97,18 +103,20 @@
                         </g>
                     </g>
                 </svg>
-        </a>
-        <a href="https://www.facebook.com/nicolas.gracia.16" target="_blank">
-            <svg class="cls-2" xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="88.428 12.828 107.543 207.085">
-                <path d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z"/>
-            </svg>
-        </a>
-    </div>
-    <div>
-        <a href="<?= url('/condition') ?>"
-           class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/condition') : ?>active<?php endif ?>">Condition
-            Générales</a>
-    </div>
+            </a>
+            <a href="https://www.facebook.com/nicolas.gracia.16" target="_blank">
+                <svg class="cls-2" xmlns="http://www.w3.org/2000/svg" height="25px"
+                     viewBox="88.428 12.828 107.543 207.085">
+                    <path d="M158.232 219.912v-94.461h31.707l4.747-36.813h-36.454V65.134c0-10.658 2.96-17.922 18.245-17.922l19.494-.009V14.278c-3.373-.447-14.944-1.449-28.406-1.449-28.106 0-47.348 17.155-47.348 48.661v27.149H88.428v36.813h31.788v94.461l38.016-.001z"/>
+                </svg>
+            </a>
+        </div>
+        <div>
+            <a href="<?= url('/condition') ?>"
+               class="<?php if ($_SERVER['REQUEST_URI'] === '/index.php/condition') : ?>active<?php endif ?>">Condition
+                Générales</a>
+        </div>
+    </section>
 </footer>
 </body>
 </html>

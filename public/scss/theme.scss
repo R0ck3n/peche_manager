@@ -570,7 +570,7 @@ main {
 
 
 //footer
-footer {
+footer section{
   @include mixins.bcg;
   min-height: 200px;
   display: flex;

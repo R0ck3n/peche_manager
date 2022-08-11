@@ -1,5 +1,5 @@
 import Map from "./Map.js";//pour l'affichage de la map avec l'API leaflet
-import {GetLatLon, Getweather} from "./weatherAPI.js";//récupere les coordonnées gps et la météo avec l'API weatherstack
+import {Getweather} from "./weatherAPI.js";//récupere les coordonnées gps et la météo avec l'API weatherstack
 
 
 //Selecteurs
@@ -54,6 +54,17 @@ export const displaySessionWeather = () =>{
     });
 }
 
+/**
+ * Récupère les coordonnées GPS d'une ville (utilisé pour l'injecté dans l'API de la carte de la zone)
+ * @param city
+ * @returns {Promise<*[]>}
+ * @constructor
+ */
+const GetLatLon = async (city) =>{
+    let response = await fetch(`https://geo.api.gouv.fr/communes?nom=${city}&format=geojson`)
+        .then(response => response.json());
+    return [response.features[0].geometry.coordinates[1], response.features[0].geometry.coordinates[0]];
+};
 
 /**
  * Fonction pour afficher la carte

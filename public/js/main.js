@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     switch (route) {
         case '':
         case '/':
-            //Affiche la carte et la météo quand le nom d'une ville est saisie
+            ///Affiche la carte et la météo quand le nom d'une ville est saisie
             homepageDisplay();
 
             //Affiche les éléments caché de la page d'accueil (titre, carte, bloc météo)
