@@ -20,7 +20,7 @@ spl_autoload_register(function ($className) {
 
 // Mise en place d'un routeur
 $route = $_SERVER['REQUEST_URI'] ?? '/';
-if (isset($_SERVER["QUERY_STRING"])){
+if (isset($_SERVER["QUERY_STRING"]) && $_SERVER["QUERY_STRING"]!==""){
     $route = substr($_SERVER['REQUEST_URI'],0,17);
 }
 

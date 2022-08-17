@@ -15,7 +15,7 @@ class AbstractController
         extract($data);
         
         // On inclut le layout
-        require 'src/App/Views/layout.phtml';
+        require 'src/App/Views/layout.php';
     }
     public function redirect(string $path): void
     {

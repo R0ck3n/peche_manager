@@ -94,7 +94,7 @@ class MemberSpaceController extends AbstractController
         $model = new FishingSessionModel();
         $fishingSessions = $model->fishingSessions($_SESSION['user_id']);
 
-        require __DIR__ . "/../Views/fishingSessionHistory.phtml";
+        require __DIR__ . "/../Views/fishingSessionHistory.php";
 
     }
 

@@ -69,7 +69,7 @@ class UserController extends AbstractController
             $this->redirect('/');;
         }
         if($_SESSION['user_role']!=='admin'){
-            if ($_SESSION['user_id']!== intval($_GET['id'])){
+            if (strval($_SESSION['user_id'])!== substr($_SERVER["QUERY_STRING"],3)){
                 $this->redirect('/');;
             }
         }

@@ -77,7 +77,7 @@
 
 <!--le corp de la page sera injecté en fonction de la page observée-->
 <main>
-    <?php require $template . '.phtml' ?>
+    <?php require $template . '.php' ?>
 </main>
 
 <footer>
@@ -120,4 +120,4 @@
 </footer>
 </body>
 </html>
-
+<?php var_dump($_SERVER['REQUEST_URI']);?>
