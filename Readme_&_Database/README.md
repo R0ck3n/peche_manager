@@ -3,11 +3,6 @@
 
 ``` 
 
-Le projet fonctionne completement qu'en local car l'API de météo qui renseigne l'API de génération de map est bloqué 
-par l'IDE car requete http (et l'API bloque la requette https).
-Les tables de la database sont dans le dossier README et le fichier database.php 
-dans le dossier "config" permet de se connecter a la database qui contiendra les tables.
-
 
 Deux profils sont déjà créés voir fichiers SQL :
      - Un admin :                                              

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 30 juil. 2022 à 15:29
+-- Généré le : mer. 17 août 2022 à 17:11
 -- Version du serveur : 8.0.27
 -- Version de PHP : 8.1.0
 
@@ -34,22 +34,21 @@ CREATE TABLE IF NOT EXISTS `fishing_history` (
   `session_content` text COLLATE utf8mb4_general_ci NOT NULL,
   `session_ranking` int NOT NULL,
   `humidity` int NOT NULL,
-  `precipitation` float NOT NULL,
-  `temperature` int NOT NULL,
+  `cloud` int NOT NULL,
+  `temperature` float NOT NULL,
   `wind_speed` int NOT NULL,
   `pressure` int NOT NULL,
   `user_id` int NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `fishing_history`
 --
 
-INSERT INTO `fishing_history` (`id`, `fishing_zone`, `session_content`, `session_ranking`, `humidity`, `precipitation`, `temperature`, `wind_speed`, `pressure`, `user_id`, `created_at`) VALUES
-(20, 'lac de la blanche', '5 black bass en fin de soirée', 5, 45, 0, 29, 17, 1021, 2, '2022-07-30 17:04:43'),
-(21, 'Etang meteor', 'Aucun poisson ! Mais on a bien manger au retour !', 3, 27, 0, 31, 22, 1018, 2, '2022-07-30 17:05:56');
+INSERT INTO `fishing_history` (`id`, `fishing_zone`, `session_content`, `session_ranking`, `humidity`, `cloud`, `temperature`, `wind_speed`, `pressure`, `user_id`, `created_at`) VALUES
+(27, 'lac hylia', 'tests', 4, 50, 0, 26.9, 2, 1010, 2, '2022-08-17 18:59:04');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
