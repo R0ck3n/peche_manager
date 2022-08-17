@@ -9,7 +9,7 @@ const getTownName = document.querySelector('#Town-name');//Input ou l'utilisateu
 const weatherPic = document.querySelector('#weather-container [data-weather="srcWeatherIcon"]');//Emplacement de l'image de la météo
 const weatherCity = document.querySelector('#weather-container [data-weather="city"]');//Emplacement du nom de la ville
 const weatherHumidity = document.querySelector('#weather-container [data-weather="humidity"]');//Emplacement de la Valeur du taux d'humidité
-const weatherPrecip = document.querySelector('#weather-container [data-weather="precipitation"]');//Emplacement de la Valeur de la quantité d'humidité
+const weatherCloud = document.querySelector('#weather-container [data-weather="cloud"]');//Emplacement de la Valeur de la couverture nuageuse
 const weatherTemp = document.querySelector('#weather-container [data-weather="temperature"]');//Emplacement de la Valeur de la température
 const weatherWindSpeed = document.querySelector('#weather-container [data-weather="windSpeed"]');//Emplacement de la Valeur de la vitesse du vent
 const weatherPressure = document.querySelector('#weather-container [data-weather="pressure"]');//Emplacement de la Valeur de la presse atmosphérique
@@ -72,6 +72,7 @@ const GetLatLon = async (city) =>{
  */
 export const mapDisplay = async () => {
     const coords = await GetLatLon(getTownName.value);
+    console.log(coords);
     if (!map) {
         // if no map before
         map = new Map(coords);
@@ -92,7 +93,7 @@ export const weatherDisplay = async () => {
     weatherPic.src = data.icon;
     weatherCity.innerHTML = data.city;
     weatherHumidity.innerHTML = data.humidity;
-    weatherPrecip.innerHTML = data.precipitation;
+    weatherCloud.innerHTML = data.cloud;
     weatherTemp.innerHTML = data.temperature;
     weatherWindSpeed.innerHTML = data.windSpeed;
     weatherPressure.innerHTML = data.pressure;

@@ -44,7 +44,7 @@ class MemberSpaceController extends AbstractController
         if (empty($data['session-ranking']) ) {
             $errors['session-ranking'] = "Veuillez attribuer une note a votre session";
         }
-        if (!is_numeric($data['humidity']) || !is_numeric($data['precipitation']) || !is_numeric($data['temperature']) || !is_numeric($data['windSpeed']) || !is_numeric($data['pressure'])
+        if (!is_numeric($data['humidity']) || !is_numeric($data['cloud']) || !is_numeric($data['temperature']) || !is_numeric($data['windSpeed']) || !is_numeric($data['pressure'])
         ) {
             $errors['weather'] = "Une erreur est survenue veuillez contacter le service client";
         }
@@ -72,7 +72,7 @@ class MemberSpaceController extends AbstractController
             'session-content' => $_POST['session-content'],
             'session-ranking' => $_POST['session-ranking'],
             'humidity' => $_POST['humidity'],
-            'precipitation' => $_POST['precipitation'],
+            'cloud' => $_POST['cloud'],
             'temperature' => $_POST['temperature'],
             'windSpeed' => $_POST['windSpeed'],
             'pressure' => $_POST['pressure'],

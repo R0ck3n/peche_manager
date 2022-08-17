@@ -81,6 +81,9 @@ textarea {
 //effet de bord
 .shadow-box {
   box-shadow: var(--btn-bgc) 0 8px 24px;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px black;
+  @include mixins.bcg;
 }
 
 //masque les éléments
@@ -97,7 +100,10 @@ textarea {
   padding: 1rem;
   background-color: var(--error-bgc);
   color: var(--error-text);
+  text-shadow: none;
+  border-radius: 15px;
   margin: 0;
+  margin-top: 1rem;
 }
 .invalid-field {
   border-color: #dc3545;
@@ -312,6 +318,9 @@ main {
     box-shadow: var(--btn-bgc) 0 8px 24px;
     padding: 1rem;
     border-radius: 15px;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px black;
+    @include mixins.bcg;
     //margin: auto auto 2rem auto;
     > div {
       display: flex;

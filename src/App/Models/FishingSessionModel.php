@@ -14,7 +14,7 @@ class FishingSessionModel extends AbstractModel
     {
         if (isset($_GET['fishing-zone'])) {
             return $this->db->getResults(
-                'SELECT fishing_zone,session_content,session_ranking, humidity,	precipitation, temperature,	wind_speed,	pressure, created_at
+                'SELECT fishing_zone,session_content,session_ranking, humidity,	cloud, temperature,	wind_speed,	pressure, created_at
             FROM fishing_history
             WHERE fishing_zone LIKE :fishing_zone', [
                 'fishing_zone' => "%".$_GET['fishing-zone']."%"
@@ -22,7 +22,7 @@ class FishingSessionModel extends AbstractModel
         }
         elseif (isset($_GET['temperature'])) {
             return $this->db->getResults(
-                'SELECT fishing_zone,session_content,session_ranking, humidity,	precipitation, temperature,	wind_speed,	pressure, created_at
+                'SELECT fishing_zone,session_content,session_ranking, humidity,	cloud, temperature,	wind_speed,	pressure, created_at
             FROM fishing_history
             WHERE temperature LIKE :temperature', [
                 'temperature' => "%".$_GET['temperature']."%"
@@ -30,14 +30,14 @@ class FishingSessionModel extends AbstractModel
         }
         elseif (isset($_GET['session-ranking'])) {
             return $this->db->getResults(
-                'SELECT fishing_zone,session_content,session_ranking, humidity,	precipitation, temperature,	wind_speed,	pressure, created_at
+                'SELECT fishing_zone,session_content,session_ranking, humidity,	cloud, temperature,	wind_speed,	pressure, created_at
             FROM fishing_history
             WHERE session_ranking LIKE :session_ranking', [
                 'session_ranking' => "%".$_GET['session-ranking']."%"
             ]);
         }else {
             return $this->db->getResults(
-                'SELECT fishing_zone,session_content,session_ranking, humidity,	precipitation, temperature,	wind_speed,	pressure, created_at
+                'SELECT fishing_zone,session_content,session_ranking, humidity,	cloud, temperature,	wind_speed,	pressure, created_at
             FROM fishing_history
             WHERE user_id = :user_id', [
                 'user_id' => $userId
@@ -54,16 +54,16 @@ class FishingSessionModel extends AbstractModel
     {
         $userId = $this->db->execute(
             'INSERT INTO fishing_history
-                (fishing_zone,	session_content	, session_ranking, humidity, precipitation, temperature, 
+                (fishing_zone,	session_content	, session_ranking, humidity, cloud, temperature, 
                  wind_speed, pressure, user_id) 
-                VALUES (:fishing_zone, :session_content, :session_ranking, :humidity, :precipitation, 
+                VALUES (:fishing_zone, :session_content, :session_ranking, :humidity, :cloud, 
                         :temperature, :wind_speed, :pressure, :user_id)',
             [
                 'fishing_zone' => $data['fishing-zone'],
                 'session_content' => $data['session-content'],
                 'session_ranking' => $data['session-ranking'],
                 'humidity' => $data['humidity'],
-                'precipitation' => $data['precipitation'],
+                'cloud' => $data['cloud'],
                 'temperature' => $data['temperature'],
                 'wind_speed' => $data['windSpeed'],
                 'pressure' => $data['pressure'],

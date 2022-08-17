@@ -17,7 +17,7 @@
 
     <form id="weather-form" action="<?= url('/fishingSessionRegister') ?>" class="memberSpace-report hidden"
           method="post">
-        <div>
+        <div class="flex-gap">
             <div class="weather-container" id="weather-container">
                 <div>
                     <div>
@@ -34,9 +34,9 @@
                             <p>%</p>
                         </div>
                         <div>
-                            <p>Précipitation:</p>
-                            <p data-weather="precipitation"></p>
-                            <p>mm</p>
+                            <p>Nuages:</p>
+                            <p data-weather="cloud"></p>
+                            <p>%</p>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                         <p>Pression:</p>
                         <div>
                             <p data-weather="pressure"></p>
-                            <p>mBar</p>
+                            <p>hPa</p>
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
             <th>Date de la session</th>
             <th>Score de session</th>
             <th>Humidité</th>
-            <th>Précipitation</th>
+            <th>Couverture nuageuse</th>
             <th>Température</th>
             <th>Vitesse du vent</th>
             <th>Pression atmosphérique</th>

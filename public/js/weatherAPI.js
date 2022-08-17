@@ -1,5 +1,5 @@
-const apiURL='http://api.weatherstack.com/current?access_key=';
-const accessKey='a6943bc3ffe99e1d7048eb2bf680b78b';
+const apiURL='https://api.openweathermap.org/data/2.5/weather?q=';
+const accessKey='47255ccb95601084970812e4b966f7d1';
 
 
 
@@ -10,17 +10,17 @@ const accessKey='a6943bc3ffe99e1d7048eb2bf680b78b';
  * @constructor
  */
 export const Getweather = async (city) =>{
-    let response = await fetch(`${apiURL}${accessKey}&query=${city}`)
+    let response = await fetch(`${apiURL}${city}&APPID=${accessKey}`)
         .then(response => response.json());
 
     return {
-        icon: response.current.weather_icons[0],
-        city:  response.location.name,
-        humidity: response.current.humidity,
-        precipitation:response.current.precip,
-        temperature: response.current.temperature,
-        windSpeed:response.current.wind_speed,
-        pressure:response.current.pressure
+        icon: `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`,
+        city:  response.name,
+        humidity: response.main.humidity,
+        cloud:response.clouds.all,
+        temperature: (Math.round((((response.main.temp_max + response.main.temp_min)/2)-273.15)*10))/10,
+        windSpeed:response.wind.speed,
+        pressure:response.main.pressure
     };
 
 
