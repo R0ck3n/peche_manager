@@ -19,7 +19,10 @@ spl_autoload_register(function ($className) {
 });
 
 // Mise en place d'un routeur
-$route = $_SERVER['PATH_INFO'] ?? '/';
+$route = $_SERVER['REQUEST_URI'] ?? '/';
+if (isset($_SERVER["QUERY_STRING"])){
+    $route = substr($_SERVER['REQUEST_URI'],0,17);
+}
 
 // Récupération des routes de l'application
 $routes = require 'config/routes.php';

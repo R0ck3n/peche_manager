@@ -5,51 +5,55 @@ return [
         'App\Controllers\HomeController',
         'index'
     ],
-    '/login' => [
+    '/index.php/' => [
+        'App\Controllers\HomeController',
+        'index'
+    ],
+    '/index.php/login' => [
         'App\Controllers\UserController',
         'loginView'
     ],
-    '/register' => [
+    '/index.php/register' => [
         'App\Controllers\UserController',
         'registerView'
     ],
-    '/memberSpace' => [
+    '/index.php/memberSpace' => [
         'App\Controllers\MemberSpaceController',
         'memberView'
     ],
-    '/fishingSessionHistory' => [
+    '/index.php/fishingSessionHistory' => [
         'App\Controllers\MemberSpaceController',
         'displayHistory'
     ],
-    '/fishingSessionRegister' => [
+    '/index.php/fishingSessionRegister' => [
         'App\Controllers\MemberSpaceController',
         'registerSession'
     ],
-    '/condition' => [
+    '/index.php/condition' => [
         'App\Controllers\HomeController',
         'condition'
     ],
-    '/subscribe' => [
+    '/index.php/subscribe' => [
         'App\Controllers\UserController',
         'register'
     ],
-    '/connect' => [
+    '/index.php/connect' => [
         'App\Controllers\UserController',
         'connect'
     ],
-    '/logout' => [
+    '/index.php/logout' => [
         'App\Controllers\UserController',
         'logout'
     ],
-    '/admin' => [
+    '/index.php/admin' => [
         'App\Controllers\UserController',
         'adminView'
     ],
-    '/update' => [
+    '/index.php/update' => [
         'App\Controllers\UserController',
         'updateView'
     ],
-    '/delete' => [
+    '/index.php/delete' => [
         'App\Controllers\UserController',
         'deleteView'
     ],
