@@ -2,16 +2,7 @@
 
 
 ``` 
-
-
-Deux profils sont déjà créés voir fichiers SQL :
-     - Un admin :                                              
-             identifiant :  admin@admin.com
-             pass :         admin   
-      
-     - Un membre :
-             identifiant :  membre@membre.com
-             pass :         membre
+Site actif : https://peche-manager.rockenspieceofcode.fr
 ```
 
 ## Description du projet :
