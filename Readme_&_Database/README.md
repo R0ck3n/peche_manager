@@ -1,10 +1,6 @@
 # PECHE MANAGER
 
 
-``` 
-Site actif : https://peche-manager.rockenspieceofcode.fr
-```
-
 ## Description du projet :
 
 Le site se veut à terme être un outil pour les pêcheurs.
